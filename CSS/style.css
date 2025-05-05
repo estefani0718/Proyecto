@@ -16,3 +16,11 @@ body{
    "pie pie ";
    height: 100vh;
 }
+.header{
+  background-color: #666666;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 90px;
+  border-bottom-left-radius: 90px;
+}
