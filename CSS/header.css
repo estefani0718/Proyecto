@@ -1,0 +1,37 @@
+.header{
+  background-color: #666666;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 90px;
+  border-bottom-left-radius: 90px;
+}
+.header__contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.header__icono{
+ margin-left: 20px;
+ margin-right: 20px;
+ width: 135px;
+ height: 109px;
+ 
+}
+.header__icono:hover{
+  background-color:#797777 ;
+}
+.header__icono-text{
+  margin-left: 10px;
+  margin-right: 200px;
+}
+.header__textos{
+  width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+.icono{
+  color: white;
+}
