@@ -1,5 +1,6 @@
 @import url(/CSS/root.css);
 @import url(/CSS/header.css);
+@import url(/CSS/formulario_Principal.css);
 *{
   margin: 0;
   padding: 0;
@@ -9,18 +10,11 @@
 body{
   display: grid;
   grid-template-rows: 125px 1fr;
-  background-color: #77CBDA;
+  background-color: hsla(200, 30%, 40%, 0.20);
   grid-template-areas: 
   "header header"
    "contenido"
    "pie pie ";
    height: 100vh;
 }
-.header{
-  background-color: #666666;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  border-bottom-right-radius: 90px;
-  border-bottom-left-radius: 90px;
-}
+

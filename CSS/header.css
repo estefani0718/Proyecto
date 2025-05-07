@@ -13,12 +13,11 @@
  
 }
 .header__icono{
- margin-left: 20px;
- margin-right: 20px;
  width: 135px;
  height: 109px;
- 
+ top: 0;
 }
+
 .header__icono:hover{
   background-color:#797777 ;
 }
@@ -26,16 +25,26 @@
   margin-left: 10px;
   margin-right: 200px;
 }
-.header__textos{
+.header__text{
   width: 45%;
   display: flex;
   justify-content: space-evenly;
   font-size: 20px;
+  
+
 }
+a{
+  color: #77CBDA;
+  text-decoration: none;
+}
+.header__texto:hover{
+  background-color: #797777;
+}
+
 .icono{
   color: white;
 }
 
-.contenedor__formulario{
-  margin: 0 auto;
-}
+
+
+
