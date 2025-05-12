@@ -4,32 +4,28 @@
   width: 23%;
   border-radius: 90px;
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  margin-left: 10px;
 }
 .header__content{
  display: flex;
- justify-content: center;
- width: 90%;
  align-items: center;
- margin-left: 40px;
+ width: 20%;
 }
 .header__anterior{
   width: 40px;
   color: #000;
   font-size: 30px;
   display: flex;
-  align-items: center;  
   flex-direction: column;
-
+  margin-right: 15px;
 }
 .header__anterior-link{
   text-decoration: none;
 }
 .header__anterior-link__text{
   font-size: 15px;
-  margin-left: 15px;
 }
-
 .header__box{
   width: 100%;
   height: 60%;
@@ -38,16 +34,79 @@
   border-radius: 50%;
   margin-top: 20px;
   color: transparent;
-  
 }
-.contenedor{
+.contenedor__formulario{
   margin: 0 auto;
-  background-color:#D9D9D9;
-  width: 40%;
+  width: 25%;
   height: 50vh;
   margin-top: 30px;
+  border-radius: 40px;
+  background-color: #fff;
+}
+.formulario__elements{
+  display: flex;
+  justify-content: center;
+}
+
+.formulario__title{
+ font-weight: 500;
+
+}
+.element__circule{
+  margin-right: 15px;
+  margin-left: 10x;
+}
+.formulario__elements-text{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.elemento__texto{
+  font-size: 25px;
+  font-style: italic;
+  margin: 20px;
+}
+.elemento__seleccion{
+  width: 150px;
+  height: 30px;
+  font-weight: 700;
+  /* border: none;  */
   border-radius: 20px;
 }
-/* .formulario__elements{
-
-} */
+.contendor__inputs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  gap: 40px;
+}
+.input__entrada{
+  align-items: center;
+  font-size: 20px;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+ border: none;
+ font-style: italic;
+}
+.caja__input{
+  width: 150px;
+  height: 28px;
+  border-radius: 15px;
+  display: flex;
+  margin-top: 5px;
+}
+.content__buton{
+  width: 20%;
+  margin: 0 auto;
+}
+.Buton__entrar{
+ width: 100px;
+ height: 40px;border: none;
+ border-radius: 20px;
+ font-size: 1rem;
+}
+.Buton__entrar:hover{
+  background-color: #666666;
+}

@@ -5,6 +5,7 @@
   align-items: center;
   border-bottom-right-radius: 90px;
   border-bottom-left-radius: 90px;
+  top: 0 ;
 }
 .header__contenedor{
   display: flex;
@@ -22,16 +23,13 @@
   background-color:#797777 ;
 }
 .header__icono-text{
-  margin-left: 10px;
-  margin-right: 200px;
+  margin: 20px;
 }
 .header__text{
   width: 45%;
   display: flex;
   justify-content: space-evenly;
   font-size: 20px;
-  
-
 }
 a{
   color: #77CBDA;
