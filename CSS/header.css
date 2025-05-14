@@ -13,7 +13,7 @@
   justify-content: center;
  
 }
-.header__icono{
+.header__icono{ 
  width: 135px;
  height: 109px;
  top: 0;
@@ -32,7 +32,7 @@
   font-size: 20px;
 }
 a{
-  color: #77CBDA;
+ color: #000;
   text-decoration: none;
 }
 .header__texto:hover{
@@ -42,7 +42,28 @@ a{
 .icono{
   color: white;
 }
+/*  cajita de registro para usuario y cliente  */
 
+.header__check{
+ color: #000;
+ position: relative;
+}
+.input__check{
+ display: none;
+}
+.content_registro{
+  width: auto;
+  display: flex;
+  flex-direction:column ;
+  background-color: #a9a29a;
+  color: #000;
+  align-items: center;
+  position: absolute;
+  top: -300px;
+  right: 0;
+ padding: 5px;
 
-
-
+}
+.input__check:checked ~ .content_registro{
+ top:30px;
+}

@@ -1,6 +1,7 @@
 @import url(/CSS/root.css);
 @import url(/CSS/header.css);
 @import url(/CSS/formulario_Principal.css);
+@import url(/CSS/registrar.css);
 *{
   margin: 0;
   padding: 0;
