@@ -1,5 +1,5 @@
 .header{
-  background-color: #666666;
+  background-color: #5a696c;
   padding: 10px;
   width: 100%;
   justify-content: center;
@@ -7,22 +7,24 @@
   border-bottom-right-radius: 90px;
   border-bottom-left-radius: 90px;
   top: 0 ;
+  
 }
 .header__contenedor{
   display: flex;
   align-items: center;
   justify-content: center;
- 
+}
+.header *{
+ color:white;
 }
 .header__icono{ 
  width: 135px;
  height: 109px;
  top: 0;
+
 }
 
-.header__icono:hover{
-  background-color:#797777 ;
-}
+
 .header__icono-text{
   margin: 20px;
 }
@@ -42,13 +44,22 @@ a{
 
 .icono{
   color: white;
+  padding: 4px;
   
+}
+a{
+  cursor: pointer;
 }
 /*  cajita de registro para usuario y cliente  */
 
 .header__check{
- color: #000;
  position: relative;
+}
+.label{
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + label {
+  color: #000;
 }
 .input__check{
  display: none;
@@ -57,13 +68,14 @@ a{
   width: auto;
   display: flex;
   flex-direction:column ;
-  background-color: #a9a29a;
-  color: #000;
+  background-color: #B0A695;
   align-items: center;
   position: absolute;
   top: -300px;
   right: 0;
  padding: 5px;
+ border-radius: 10%;
+
 
 }
 .input__check:checked ~ .content_registro{
