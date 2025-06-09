@@ -12,7 +12,7 @@
 body{
   display: grid;
   grid-template-rows: 125px 1fr;
-  background-color: hsla(200, 30%, 40%, 0.20);
+  background-color:var(--color_principal-body);
   grid-template-areas: 
   "header header"
    "contenido"
@@ -96,7 +96,7 @@ body{
 .box{
   width: 80%;
   height: auto;
-  background-color: #b2d3e1;
+  background-color:var(--contenedor__primario-pricipal);
   margin: 0 auto;
   padding: 10px;
   display: grid;
@@ -133,9 +133,14 @@ body{
 }
 .pie{
   width: 100%;
-  height: 40vh;
-  background-color: #6666;
+  height: 30vh;
+  background-color: var(--color__header);
 }
+
+
+/*  */
+
+
 @keyframes deslizar {
   0% {
     transform: translateX(100%); /* Comienza fuera a la derecha */
