@@ -17,8 +17,6 @@ body{
   "header header"
    "contenido"
    "pie pie ";
-   height: 100vh;
-   
 }
 .contenido{
   grid-area: contenido;
@@ -129,6 +127,41 @@ body{
   margin: 0 auto;
   border-radius: 10px;
 
+}
+
+
+/* section 2  */
+
+.contenidos{
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+ grid-template-rows: none;
+ grid-template-columns: 1fr 1fr ;
+}
+.contenido__domi{
+  background-color: var(--contenedor__primario-pricipal);
+  border-top-right-radius: 30px;
+  justify-content: center;
+}
+.domi__elemntos{
+ display: flex;
+ justify-content: center;
+}
+.domi__elementos__imagen{
+  display: grid;
+  grid-template-rows: 200px ;
+  grid-template-columns: 1fr 1fr ;
+  padding: 1vw;
+}
+.icono__registro{
+  color: black;
+}
+.imagen__celular{
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
 }
 .pie{
   width: 100%;
