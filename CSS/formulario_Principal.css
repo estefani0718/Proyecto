@@ -35,6 +35,7 @@
   margin-top: 5vw;
   border-radius: 40px;
   background-color: var(--color__blanco-hueso);
+  display: flex;
 }
 .formulario__elements{
   display: flex;
@@ -66,6 +67,7 @@
   font-weight: 600;
   border-radius: 20px;
   border: none;
+  text-align: center;
 }
 .contendor__inputs{
   display: flex;
@@ -94,6 +96,7 @@
 .content__buton{
   width: 20%;
   margin: 0 auto;
+
 }
 .Buton__entrar{
  width: 6vw;

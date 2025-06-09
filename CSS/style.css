@@ -109,7 +109,6 @@ body{
   animation-timing-function: ease-out;
   
 }
-
 .box__title{
   width:100%;
   text-align: center;
@@ -136,11 +135,7 @@ body{
   height: 30vh;
   background-color: var(--color__header);
 }
-
-
-/*  */
-
-
+/* darle movimiento a contenedor e imagenes */
 @keyframes deslizar {
   0% {
     transform: translateX(100%); /* Comienza fuera a la derecha */
