@@ -1,7 +1,6 @@
 @import url(/CSS/root.css);
-@import url(/CSS/headerInicio.css);
-@import url(/CSS/formulario_Principal.css);
-@import url(/CSS/registrar.css);
+@import url(/CSS/Headers.css);
+@import url(/CSS/Formularios.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{
   margin: 0;
@@ -18,6 +17,8 @@ body{
    "contenido"
    "pie pie ";
 }
+
+/* contenido del index principal  */
 .contenido{
   grid-area: contenido;
  height: 100vh;
@@ -129,9 +130,7 @@ body{
 
 }
 
-
 /* section 2  */
-
 .contenidos{
   display: grid;
   width: 100%;
@@ -163,27 +162,12 @@ body{
   margin: 0 auto;
   display: flex;
 }
+
+/* el pie de la pagina inicial */
+
 .pie{
   width: 100%;
   height: 30vh;
   background-color: var(--color__header);
 }
-/* darle movimiento a contenedor e imagenes */
-@keyframes deslizar {
-  0% {
-    transform: translateX(100%); /* Comienza fuera a la derecha */
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0%); /* Termina en su posición original */
-    opacity: 1;
-  }
-}
-@keyframes moverDerecha {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100px); /* Ajusta la distancia */
-  }
-}
+

@@ -15,3 +15,24 @@
   --color__blanco-hueso:#f2f2f2;
 
 }
+/* darle movimiento a contenedor e imagenes del index pricipal  */
+@keyframes deslizar {
+  0% {
+    transform: translateX(100%); /* Comienza fuera a la derecha */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%); /* Termina en su posición original */
+    opacity: 1;
+  }
+}
+@keyframes moverDerecha {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px); /* Ajusta la distancia */
+  }
+}
+
+/* Media queries  */

@@ -22,8 +22,6 @@
  top: 0;
 
 }
-
-
 .header__icono-text{
   margin: 20px;
 }
@@ -79,4 +77,49 @@ input[type="checkbox"]:checked + label {
 }
 .input__check:checked ~ .content_registro{
  top:30px;
+}
+
+/* header del formulario principal  */
+
+.header__formulario{
+  background-color: var(--color__header);
+  padding: 15px;
+  width: 20%;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  display: flex;
+  position: relative;
+  margin-left: 5px;
+}
+.header__content{
+ display: flex;
+ align-items: center;
+ width: 20%;
+}
+.header__anterior{
+  width: 40px;
+  color: var(--color__negro);
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
+.header__anterior-link{
+  text-decoration: none;
+}
+.header__anterior-link__text{
+  font-size: 15px;
+}
+ 
+
+/*  header de la vista de usuario */
+
+.header__vista{
+  width: 30%;
+  height: 6vw;
+  background-color: var(--color__header);
+  margin: 0 auto;
+}
+.icono_vista{
+  font-size: 5vw;
 }
