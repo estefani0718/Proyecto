@@ -83,7 +83,7 @@
 /* formulario para el registro  */
 .contenedor__registro{
   width: 34%;
-  height: 55vh;
+  height: 75vh;
   background-color: #f2f2f2;
   margin: 0 auto;
   justify-content: center;
@@ -115,4 +115,14 @@
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 200px 1fr ;
+}
+
+/* estilos de los boer cuadno los campos estan vacios */
+.input__border{
+  border-color: red;
+}
+.span{
+  color: #8C7C3C;
+  
+  margin-left: 20px;
 }

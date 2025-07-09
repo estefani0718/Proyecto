@@ -1,20 +1,11 @@
 const url = "http://localhost:8080/ProyectoDomiexpro/api/"; // aqui obtenemos uan ruta base o url 
 
-/**
- * Realiza una petición GET a la API.
- * @param {string} endpoint - Ruta del recurso (ejemplo: "/usuarios").
- * @returns {Promise<Response>} - Promesa con la respuesta de la API.
- */
+
 export const get = async (endpoint) => {
     return await fetch(url + endpoint);
 };
 
-/**
- * Realiza una petición POST a la API para crear un nuevo recurso.
- * @param {string} endpoint - Ruta del recurso (ejemplo: "/usuarios").
- * @param {object} data - Datos que se enviarán en el cuerpo de la solicitud.
- * @returns {Promise<Response>} - Promesa con la respuesta de la API.
- */
+
 export const post = async (endpoint, data) => {
     return await fetch(url + endpoint, {
         method: "POST",
@@ -24,13 +15,8 @@ export const post = async (endpoint, data) => {
         body: JSON.stringify(data)
     });
 };
-/**
- * Realiza una petición PUT a la API para actualizar un recurso existente.
- * @param {string} endpoint - Ruta base del recurso (ejemplo: "/usuarios").
- * @param {string|number} documento - Clave primaria del recurso a actualizar.
- * @param {object} data - Datos actualizados que se enviarán.
- * @returns {Promise<Response>} - Promesa con la respuesta de la API.
- */ 
+
+
 export const put = async (endpoint, documento, data) => {
     return await fetch(`${url + endpoint}/${documento}`, {
         method: "PUT",

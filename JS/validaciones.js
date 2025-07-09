@@ -1,3 +1,36 @@
+export const validarFormulario = (event) => {
+  const campos = [...event.target].filter((elemento) => {
+    return elemento.hasAttribute("required");
+  });
+  campos.forEach((campo) => {
+    switch (campo.tagName) {
+      case "INPUT":
+        if (
+          campo.type == "text" ||
+          campo.type == "number" ||
+          campo.type == "password" ||
+          campo.type == "tel"
+        ) {
+          obj[campo.name] = campo.value;
+          if (campo.value.trim() === "") {
+            campo.classList.add("error");
+          }
+        }
+        break;
+      case "SELECT":
+        obj[campo.name] = campo.selectedIndex;
+        if (campo.selectedIndex === 0) {
+          obj[campo.name] = "";
+          campo.classList.add("error");
+        }
+      default:
+        break;
+    }x
+  });
+  return datos;
+}
+
+
 // validaciones de texto, numero  y contraseña 
 export const validarText = (event) => {
   let letra = event.key;
@@ -47,7 +80,6 @@ export const campo = (event) => {
     }
   }
 };
-
 
 
 
