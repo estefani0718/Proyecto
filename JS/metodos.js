@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/ProyectoDomiexpro/api/"; // aqui obtenemos uan ruta base o url 
+const url = "http://localhost:8080/ProyectoDomiexpro/api/"; // aqui obtenemos una ruta base o url 
 
 
 export const get = async (endpoint) => {
@@ -27,12 +27,7 @@ export const put = async (endpoint, documento, data) => {
     });
 };
 
-/**
- * Realiza una petición DELETE a la API para eliminar un recurso por su documento.
- * @param {string} endpoint - Ruta base del recurso (ejemplo: "/usuarios").
- * @param {string|number} documento - Clave primaria del recurso a eliminar.
- * @returns {Promise<Response>} - Promesa con la respuesta de la API.
- */
+
 export const del = async (endpoint, documento) => {
     return await fetch(`${url + endpoint}/${documento}`, {
         method: "DELETE"

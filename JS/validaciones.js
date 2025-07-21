@@ -25,7 +25,7 @@ export const validarFormulario = (event) => {
         }
       default:
         break;
-    }x
+    }
   });
   return datos;
 }
