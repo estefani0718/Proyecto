@@ -1,4 +1,4 @@
-import { validarText, validarNum, campo } from "./validaciones.js";
+import { validarText, validarNum, campo, validar ,validarContaseña} from "./validaciones.js";
 
 const formulario = document.querySelector("#form__registro");
 
@@ -15,12 +15,23 @@ const usuario = formulario.querySelector('input[name="usuario"]');
 const contrasena = formulario.querySelector('input[name="contrasena"]');
 const tTipocliente = formulario.querySelector('select[name="tipoCliente"]');
 
+document.addEventListener("DOMContentLoaded", () => {
+  const contrasena = document.getElementById("contrasena");
+
+  if (contrasena) {
+    contrasena.addEventListener("keydown", validarContaseña);
+  }
+});
 nombre.addEventListener("keydown", validarText);
 documento.addEventListener("keydown", validarNum);
 nombre.addEventListener("blur", campo);
+tDocumento.addEventListener("blur", campo);
+documento.addEventListener("blur", campo);
+direccion.addEventListener("blur", campo);
+telefono.addEventListener("blur", campo);
+tTransporte.addEventListener("blur", campo);
+email.addEventListener("blur", campo);
 
-formulario.addEventListener("submit", (event) => {
-  event.preventDefault();
 
 
-});
+formulario.addEventListener("submit",validar);

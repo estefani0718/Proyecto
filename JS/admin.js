@@ -1,6 +1,6 @@
 async function usuarios() {
   try {
-    const endpoint = await fetch("http://localhost:8080/ProyectoDomiexpro/api/Usuarios");
+    const endpoint = await fetch("http://localhost:8080/ProyectoDomiexpro/api/usuarios");
 
     if (!endpoint.ok) {
       throw new Error("Error al obtener usuarios: " + endpoint.status);
@@ -60,18 +60,18 @@ async function crear(data) {
     const tdId = crearCelda(usuario.id);
     const tdNombre = crearCelda(usuario.nombre_usuario);
     const tdDocumento = crearCelda(usuario.documento_usuario);
-    const tdTipoDoc = crearCelda(usuario.codigo_Tdocumento);
+    const tdTipoDoc = crearCelda(usuario.tipo_documento );
     const tdGenero = crearCelda(usuario.genero_usuario);
     const tdDireccion = crearCelda(usuario.direccion_usuario);
     const tdTelefono = crearCelda(usuario.telefono_usuario);
     const tdCorreo = crearCelda(usuario.correo);
-    const tdEstado = crearCelda(usuario.id_estado);
-    const tdRol = crearCelda(usuario.codigo_rol);
-    const tdResidencia = crearCelda(usuario.codigo_residencia);
-    const tdTipoCliente = crearCelda(usuario.codigo_tipoC);
+    const tdEstado = crearCelda(usuario.estado);
+    const tdRol = crearCelda(usuario.rol);
+    const tdResidencia = crearCelda(usuario.residencia);
+    const tdTipoCliente = crearCelda(usuario.tipo_cliente);
     const tdUsuario = crearCelda(usuario.usuario);
     const tdContrasena = crearCelda(usuario.contrasena);
-
+    console.log(usuario)
     // Acciones
     const tdAcciones = document.createElement("td");
 

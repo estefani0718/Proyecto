@@ -38,8 +38,8 @@
           <input type="text" class="caja__input" name="nombre" required>
         </div>
         <div>
-          <select name="tipoDocumento" id=""  class="elemento__seleccion" required>
-            <option>Tipo documento</option>
+          <select name="tipoDocumento"   class="elemento__seleccion" >
+            <option disabled selected  >Tipo documento</option>
             <option value="1">Cedula ciudadania</option>
             <option value="2">Cedula extrajero</option>
             <option value="3">Nit</option>
@@ -72,14 +72,15 @@
         </div>
         <div>
           <label for="email" class="input__entrada">E-mail</label>
-          <input type="text" class="caja__input" name="email" required>
+          <input type="email" class="caja__input" name="email" required>
         </div>
         
       </div>
       <div class="contendor__inputs">
           <div>
             <label for="residencia" class="input__entrada">Municipio</label>
-            <select name="residencia" id="" class="elemento__seleccion" required>
+            <select name="residencia"  class="elemento__seleccion" >
+              <option  disabled selected>Seleciona</option>
               <option value="1">Bucaramanga</option>
               <option value="2">Giron </option>
               <option value="3">Florida</option>
@@ -92,19 +93,22 @@
         <div class="contendor__inputs">
           <div>
             <label for="usuario" class="input__entrada">Usuario</label>
-            <input type="text"  name="usuario" class="caja__input">
+            <input type="text"  name="usuario" class="caja__input" required>
           </div>
           <div>
             <label for="contraseña" class="input__entrada">Contraseña</label>
-            <input type="text" name="contraseña" class="caja__input">
+            <input type="password" name="contraseña" class="caja__input" required>
+            
           </div>
+         
         </div>
       </div>
      <div class="contendor__inputs">
       <label for="tipoCliente" class="input__entrada">Que tipo de cliente eres?</label>
-      <select name="tipoCliente" id="" class="elemento__seleccion" required>
+      <select name="tipoCliente"  class="elemento__seleccion" required>
         <option value="1">Domiciliario</option>
-        <option value="2">cliente</option>
+        <option value="2">Cliente</option>
+        <option value="3">Admin</option>
       </select>
      </div>
       <div class="content__buton">
@@ -113,9 +117,8 @@
         </button>
       </div>  
     </form>
-    
+    <script type="module" src="/JS/registro.js"></script>
   </div>
 </body>
 </html>
 
-<script type="module" src="/JS/registro.js"></script>

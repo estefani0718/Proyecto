@@ -1,34 +1,68 @@
-export const validarFormulario = (event) => {
-  const campos = [...event.target].filter((elemento) => {
-    return elemento.hasAttribute("required");
+export const validar = (e) => {
+  e.preventDefault();
+
+  const person = {};
+
+  // Todos los campos con required
+  const campos = [...e.target].filter((hijo) => hijo.hasAttribute("required"));
+
+  // Radios: agrupar por nombre
+  const radios = campos.filter((el) => el.type === "radio");
+  const nombresRadios = [...new Set(radios.map((el) => el.name))];
+
+  // Procesar radios
+  nombresRadios.forEach((name) => {
+    const seleccionados = radios.filter((r) => r.name === name);
+    const seleccionado = seleccionados.find((r) => r.checked);
+    if (!seleccionado) {
+      marcarError(seleccionados[0], `Debes seleccionar una opción para ${name}`);
+      person[name] = "";
+    } else {
+      person[name] = seleccionado.value;
+    }
   });
-  campos.forEach((campo) => {
-    switch (campo.tagName) {
+
+  // Procesar los demás campos
+  campos.forEach((el) => {
+    if (el.type === "radio") return; // ya se procesó arriba
+
+    switch (el.tagName) {
       case "INPUT":
-        if (
-          campo.type == "text" ||
-          campo.type == "number" ||
-          campo.type == "password" ||
-          campo.type == "tel"
-        ) {
-          obj[campo.name] = campo.value;
-          if (campo.value.trim() === "") {
-            campo.classList.add("error");
-          }
+        if (["text", "password", "tel", "email"].includes(el.type)) {
+         if (el.value === "") {
+          marcarError(el, `El campo ${el.name} está vacío`);
+          person[el.name] = "";
+        } else {
+        person[el.name] = el.value; 
         }
-        break;
+      }
+       break;
       case "SELECT":
-        obj[campo.name] = campo.selectedIndex;
-        if (campo.selectedIndex === 0) {
-          obj[campo.name] = "";
-          campo.classList.add("error");
+        if (el.selectedIndex === 0) {
+          marcarError(el, `Selecciona una opción para ${el.name}`);
+          person[el.name] = "";
+        } else {
+          person[el.name] = el.options[el.selectedIndex].text;
         }
-      default:
         break;
     }
   });
-  return datos;
+
+  console.log(person); // Aquí tienes todos los datos correctamente
+};
+
+function marcarError(el, mensaje) {
+  el.classList.add("input__border");
+
+  // evitar duplicados
+  if (!el.nextElementSibling || !el.nextElementSibling.classList.contains("span")) {
+    const span = document.createElement("span");
+    span.classList.add("span");
+    span.textContent = mensaje;
+    el.insertAdjacentElement("afterend", span);
+  }
 }
+
 
 
 // validaciones de texto, numero  y contraseña 
@@ -58,20 +92,16 @@ export const validarNum = (event) => {
   }
 };
 export const validarContaseña = (event) => {
-  let letra = event.key;
+  const valor = event.target.value;
   const regexContra = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
-  const teclasPermitir = [
-    "Backspace",
-    "ArrowLeft",
-    "ArrowRight",
-    "Delete",
-    "Tab",
-  ];
-  if (teclasPermitir.includes(letra)) return;
-  if (regexContra.test(letra)) {
-    alert("contraseña valida");
+
+  if (regexContra.test(valor)) {
+    console.log("Contraseña válida ✅");
+  } else {
+    console.log("Debe tener mayúscula, minúscula y un número ❌");
   }
 };
+
 export const campo = (event) => {
   if (event.target.value !== "") {
     event.target.classList.remove("input__border");
