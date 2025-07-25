@@ -1,37 +1,51 @@
-import { validarText, validarNum, campo, validar ,validarContaseña} from "./validaciones.js";
-
+import { validarText, validarNum, campo, validarFormulario ,validarContaseña} from "./validaciones.js";
+import { post } from "./metodos.js";
 const formulario = document.querySelector("#form__registro");
 
 const nombre = formulario.querySelector('input[name="nombre"]');
-const tDocumento = formulario.querySelector('select[name="tipoDocumento"]');
 const documento = formulario.querySelector('input[name="documento"]');
 const generos = formulario.querySelectorAll('input[name="genero"]');
 const direccion = formulario.querySelector('input[name="direccion"]');
 const telefono = formulario.querySelector('input[name="telefono"]');
-const tTransporte = formulario.querySelector('input[name="tipoTransporte"]');
 const email = formulario.querySelector('input[name="email"]');
 const residencia = formulario.querySelector('select[name="residencia"]');
 const usuario = formulario.querySelector('input[name="usuario"]');
-const contrasena = formulario.querySelector('input[name="contrasena"]');
 const tTipocliente = formulario.querySelector('select[name="tipoCliente"]');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const contrasena = document.getElementById("contrasena");
-
-  if (contrasena) {
-    contrasena.addEventListener("keydown", validarContaseña);
-  }
-});
 nombre.addEventListener("keydown", validarText);
 documento.addEventListener("keydown", validarNum);
 nombre.addEventListener("blur", campo);
-tDocumento.addEventListener("blur", campo);
 documento.addEventListener("blur", campo);
 direccion.addEventListener("blur", campo);
 telefono.addEventListener("blur", campo);
-tTransporte.addEventListener("blur", campo);
 email.addEventListener("blur", campo);
+tTipocliente.addEventListener('blur',campo)
+
+formulario.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const datos = validarFormulario(e.target);
+  if (!datos) return;
+
+  // ✅ Agregamos valores por defecto
+  datos.estado = "Activo";
+  datos.rol = datos.tipo_cliente; // asumimos que tipo_cliente viene del <select>
+
+  try {
+    const res = await post("/usuarios/registrar", datos);
+    const result = await res.json();
+
+    if (res.ok) {
+      alert("✅ Usuario registrado correctamente");
+      formulario.reset(); // limpia el formulario
+    } else {
+      alert("❌ Error: " + result);
+    }
+  } catch (err) {
+    alert("❌ No se pudo registrar");
+    console.error(err);
+  }
+});
 
 
 
-formulario.addEventListener("submit",validar);

@@ -30,8 +30,7 @@
   </header>
 
   <div class="contenedor__formulario">
-    <form action="#" id="form__login">
-      <div class="formulario__elements">
+     <div class="contendor__elements">
         <div class="element__circule">
           <img src="/IMG/Group 5.png" alt="circulo">
         </div>
@@ -43,47 +42,29 @@
           <img src="/IMG/Group 5 (1).png" alt="">
         </div>
       </div>
-      <div>
-      </div>
-
-      <div class="formulario__elements-text">
-        <div class="elemento__texto">
-          <span>Roles</span>
-        </div>
-        <select name="roles" id="roles" class="elemento__seleccion">
-          <option >Selecciona</option>
-          <option value="1">Domiciliario</option>
-          <option value="2">Cliente</option>
-        </select>
-      </div>
-      <div class="contendor__inputs">
-        <div class="input__entrada">
-          <label for="">Usuario</label>
-          <input type="text" placeholder=" Estefani123" class="caja__input" required>
+    <form action="#" id="form__login" class="formulario__login">
+       <div class="contendor__inputs ">
+        <div >
+          <label class="input__entrada">Usuario</label>
+          <input type="text"  name="usuario"  class="caja__input" required>
 
         </div>
-        <div class="input__entrada">
-          <label for=""> Contraseña</label>
-          <input type="password" placeholder=" ******" class="caja__input" required></input>
+        <div >
+          <label class="input__entrada"> Contraseña</label>
+          <input type="password" name="contrasena" class="caja__input" required></input>
         </div>
-      </div>
-      <div class="content__buton">
-        <button  type="submit"   class="Buton__entrar">
-          <a href="/HTML/vista__usuario.html">Entrar</a>
-        </button>
       </div>
       <div class="contendor__inputs">
         <p>¿ No tienes cuenta ?</p>
-        <a href="/HTML/login.html" >Resgistrate aqui </a>
+        <a href="/HTML/registro.html" >Resgistrate aqui </a>
+      </div>
+      <div class="content__buton">
+        <button  type="submit"   class="Buton__entrar">
+          <a href="#">Entrar</a>
+        </button>
       </div>
     </form>
-    <div>
-      <img src="/IMG/" alt="">
-    </div>
   </div>
- 
-
-
+<script type="module" src="/JS/login.js"></script>
 </body>
-
 </html>

@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/ProyectoDomiexpro/api/"; // aqui obtenemos una ruta base o url 
+const url = "http://localhost:8080/ProyectoDomiexpro/api"; // aqui obtenemos una ruta base o url 
 
 
 export const get = async (endpoint) => {

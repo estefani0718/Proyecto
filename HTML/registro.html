@@ -29,20 +29,21 @@
    </div>  
   </header>
   <div class="contenedor__registro">
-    <div class="title"><h4 >Ingresa tus datos</h4></div>
-   <!-- formulario de registro  -->
+    <div class="title"><h4 >Ingresa tus datos personales </h4></div>
+    <!-- formulario de registro  -->
     <form action="#"  class="form__registro " id="form__registro" novalidate>
       <div class="contendor__inputs">
         <div>
           <label for="nombre" class="input__entrada">Nombre</label>
           <input type="text" class="caja__input" name="nombre" required>
         </div>
-        <div>
-          <select name="tipoDocumento"   class="elemento__seleccion" >
-            <option disabled selected  >Tipo documento</option>
-            <option value="1">Cedula ciudadania</option>
-            <option value="2">Cedula extrajero</option>
-            <option value="3">Nit</option>
+        <!-- TIPO DOCUMENTO -->
+        <div class="contendor__inputs">
+          <select name="tipoDocumento" required class="elemento__seleccion">
+            <option value="" disabled selected>Tipo documento</option>
+            <option value="1">Cédula ciudadanía</option>
+            <option value="2">Cédula extranjero</option>
+            <option value="3">NIT</option>
           </select>
         </div>
         <div>
@@ -50,11 +51,18 @@
           <input type="text" class="caja__input"  name="documento" required>
         </div>
       </div>
-      <div  class="contendor__inputs radios">
-        <label for="">Genero</label>
-        <div><input type="radio" value="1" required name="genero"><label for="genero"> Masculino</label></div>
-        <div><input type="radio" value="2" required name="genero"> <label for="genero">Femenino</label></div>
-      </div>
+     <div class="contendor__inputs radios">
+        <label>Género</label>
+        <div>
+          <input type="radio" id="genero_m" value="Masculino" required name="genero">
+          <label for="genero_m">Masculino</label>
+        </div>
+        <div>
+          <input type="radio" id="genero_f" value="Femenino" required name="genero">
+          <label for="genero_f">Femenino</label>
+        </div>  
+    </div>
+
       <div class="contendor__inputs">
         <div >
           <label for="direccion" class="input__entrada">Direccion</label>
@@ -66,28 +74,33 @@
         </div>
       </div>
       <div class="contendor__inputs">
-        <div >
-          <label for="tipoTransporte" class="input__entrada">Tipo transporte</label>
-          <input type="text" class="caja__input"name="tipoTransporte" required>
-        </div>
         <div>
           <label for="email" class="input__entrada">E-mail</label>
           <input type="email" class="caja__input" name="email" required>
         </div>
         
       </div>
+     <!-- MUNICIPIO -->
       <div class="contendor__inputs">
-          <div>
-            <label for="residencia" class="input__entrada">Municipio</label>
-            <select name="residencia"  class="elemento__seleccion" >
-              <option  disabled selected>Seleciona</option>
-              <option value="1">Bucaramanga</option>
-              <option value="2">Giron </option>
-              <option value="3">Florida</option>
-              <option value="4">Pidecuesta</option>
-            </select>
-        </div>
-     </div>
+        <label for="residencia" class="input__entrada">Municipio</label>
+        <select name="residencia" required class="elemento__seleccion">
+          <option value="" disabled selected>Selecciona</option>
+          <option value="1">Bucaramanga</option>
+          <option value="2">Giron</option>
+          <option value="3">Florida</option>
+          <option value="4">Pidecuesta</option>
+        </select>
+      </div>
+      <!-- TIPO CLIENTE -->
+      <div class="contendor__inputs contendor__inputs--columna ">
+        <label for="tipoCliente" class="input__entrada cambio">¿Qué tipo de cliente eres?</label>
+        <select name="tipoCliente" required class="elemento__seleccion">
+          <option value="" disabled selected>Selecciona</option>
+          <option value="1">Domiciliario</option>
+          <option value="2">Cliente</option>
+          <option value="3">Admin</option>
+        </select>
+      </div>
       <div>
         <label for="" class="title">Crea un usuario y una contraseña </label>
         <div class="contendor__inputs">
@@ -97,28 +110,19 @@
           </div>
           <div>
             <label for="contraseña" class="input__entrada">Contraseña</label>
-            <input type="password" name="contraseña" class="caja__input" required>
+            <input type="password" name="contrasena" class="caja__input" required>
             
           </div>
-         
         </div>
       </div>
-     <div class="contendor__inputs">
-      <label for="tipoCliente" class="input__entrada">Que tipo de cliente eres?</label>
-      <select name="tipoCliente"  class="elemento__seleccion" required>
-        <option value="1">Domiciliario</option>
-        <option value="2">Cliente</option>
-        <option value="3">Admin</option>
-      </select>
-     </div>
       <div class="content__buton">
         <button class="Buton__entrar" type="submit">
           Registarse
         </button>
       </div>  
     </form>
-    <script type="module" src="/JS/registro.js"></script>
   </div>
+  <script type="module" src="/JS/registro.js"></script>
 </body>
 </html>
 

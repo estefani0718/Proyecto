@@ -1,60 +1,52 @@
-export const validar = (e) => {
-  e.preventDefault();
+export const validarFormulario = (form) => {
+  const datosPersona = {};
+  let hayErrores = false;
 
-  const person = {};
+  const campos = [...form.elements].filter(el => el.hasAttribute("required"));
 
-  // Todos los campos con required
-  const campos = [...e.target].filter((hijo) => hijo.hasAttribute("required"));
+  campos.forEach(el => {
+    const tag = el.tagName;
 
-  // Radios: agrupar por nombre
-  const radios = campos.filter((el) => el.type === "radio");
-  const nombresRadios = [...new Set(radios.map((el) => el.name))];
-
-  // Procesar radios
-  nombresRadios.forEach((name) => {
-    const seleccionados = radios.filter((r) => r.name === name);
-    const seleccionado = seleccionados.find((r) => r.checked);
-    if (!seleccionado) {
-      marcarError(seleccionados[0], `Debes seleccionar una opción para ${name}`);
-      person[name] = "";
-    } else {
-      person[name] = seleccionado.value;
-    }
-  });
-
-  // Procesar los demás campos
-  campos.forEach((el) => {
-    if (el.type === "radio") return; // ya se procesó arriba
-
-    switch (el.tagName) {
+    switch (tag) {
       case "INPUT":
         if (["text", "password", "tel", "email"].includes(el.type)) {
-         if (el.value === "") {
-          marcarError(el, `El campo ${el.name} está vacío`);
-          person[el.name] = "";
-        } else {
-        person[el.name] = el.value; 
+          if (el.value.trim() === "") {
+            marcarError(el);
+            hayErrores = true;
+          } else {
+            datosPersona[el.name] = el.value;
+          }
         }
-      }
-       break;
+
+        if (el.type === "radio") {
+          const grupo = form.querySelectorAll(`input[name="${el.name}"]`);
+          const seleccionado = [...grupo].find(r => r.checked);
+          if (seleccionado) {
+            datosPersona[el.name] = seleccionado.value;
+          } else {
+            marcarError(el);
+            hayErrores = true;
+          }
+        }
+        break;
+
       case "SELECT":
         if (el.selectedIndex === 0) {
-          marcarError(el, `Selecciona una opción para ${el.name}`);
-          person[el.name] = "";
+          marcarError(el, `El campo ${el.name} no ha sido seleccionado`);
+          hayErrores = true;
         } else {
-          person[el.name] = el.options[el.selectedIndex].text;
+          datosPersona[el.name] = el.options[el.selectedIndex].value;
         }
         break;
     }
   });
 
-  console.log(person); // Aquí tienes todos los datos correctamente
+  return hayErrores ? null : datosPersona;
 };
 
-function marcarError(el, mensaje) {
-  el.classList.add("input__border");
 
-  // evitar duplicados
+function marcarError(el, mensaje = `El campo ${el.name} es obligatorio`) {
+  el.classList.add("input__border");
   if (!el.nextElementSibling || !el.nextElementSibling.classList.contains("span")) {
     const span = document.createElement("span");
     span.classList.add("span");
@@ -62,6 +54,9 @@ function marcarError(el, mensaje) {
     el.insertAdjacentElement("afterend", span);
   }
 }
+
+
+
 
 
 
