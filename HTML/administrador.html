@@ -6,25 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
     <link rel="stylesheet" href="/CSS/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
 </head>
 
 <body>
-   <header class="header__vista  header__formulario">
-    <div class="">
-      <i class="ri-user-fill icono_vista" ></i>
+  <header class="header__vista  header__formulario">
+    <div class="header__icono--tamaño " >
+      <h3 class="input__entrada">perfil: <span id="nombre_usuario"></span></h3>
+      <i class="ri-user-fill icono" ></i>
    </div>
-   <div>
-      <h3>perfil</h3>
-      <h3>estado</h3>
-   </div>
+   <h3>estado</h3>
     <div>
       <h2>informacion del usuario</h2>
     </div>
   </header>
     
-    <main class="main">
-       
-    </main>
+  <main>
+    <div class="caja-tabla">
+      <table class="mi-tabla" id="tablaUsuarios">
+        <thead>
+          <tr>
+            <th class="celda-header">ID</th>
+            <th class="celda-header">Nombre</th>
+            <th class="celda-header">Documento</th>
+            <th class="celda-header">Tipo Documento</th>
+            <th class="celda-header">Género</th>
+            <th class="celda-header">Dirección</th>
+            <th class="celda-header">Teléfono</th>
+            <th class="celda-header">Correo</th>
+            <th class="celda-header">Estado</th>
+            <th class="celda-header">Rol</th>
+            <th class="celda-header">Residencia</th>
+            <th class="celda-header">Usuario</th>
+            <th class="celda-header">Contraseña</th>
+            <th class="celda-header">Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoTablaUsuarios">
+          <!-- Filas dinámicas se insertan aquí -->
+        </tbody>
+      </table>
+    </div>
+  </main>
     <script src="/JS/admin.js"></script>
 </body>
 

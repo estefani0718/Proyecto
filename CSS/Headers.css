@@ -45,6 +45,7 @@ a{
   padding: 4px;
   
 }
+
 a{
   cursor: pointer;
 }
@@ -100,7 +101,7 @@ input[type="checkbox"]:checked + label {
 .header__anterior{
   width: 40px;
   color: var(--color__negro);
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   flex-direction: column;
   margin-right: 15px;
@@ -120,7 +121,63 @@ input[type="checkbox"]:checked + label {
   height: 6vw;
   background-color: var(--color__header);
   margin: 0 auto;
+  display: flex;
 }
-.icono_vista{
-  font-size: 5vw;
+.header__icono--tamaño{
+  width: 30%;
+  height: 50%;
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  
 }
+.titulo__perfil{
+  font-style: italic;
+  font-size: 1vw;
+  padding: 2px;
+  width: 80%;
+  margin: 3px;
+  font-weight: 500;
+
+}
+.icono--border{
+ border-radius: 50%;
+ justify-content: center;
+ color: #f2f2f2;
+ width: 20%;
+ background-color: #007bff;
+ padding: 2px;
+ align-items: center;
+ position: relative;
+
+ 
+}
+.content_icono{
+  width: 20%;
+ margin-left: 2.5vw;
+}
+.content_usuario{
+  width: 350px ;
+  height: auto;
+  background-color:#007bff ;
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -300px;
+  right: 0;
+ padding: 5px;
+ border-radius: 50px;
+
+ 
+}
+.input__check:checked ~ .content_usuario{
+  height: 50vh; /* lo suficiente para mostrar el contenido */
+  opacity: 1;
+  top: 50px;
+  /* left: -100px; */
+ }
+
+
+
