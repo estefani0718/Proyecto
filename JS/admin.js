@@ -29,7 +29,7 @@ async function crear(data) {
 
   const columnas = [
     "ID", "Nombre", "Documento", "Tipo Documento", "Género", "Dirección",
-    "Teléfono", "Correo", "Estado", "Rol", "Residencia", "Tipo Cliente",
+    "Teléfono", "Correo", "Estado", "Rol", "Residencia", 
     "Usuario", "Contraseña", "Opciones"
   ];
 
@@ -68,7 +68,6 @@ async function crear(data) {
     const tdEstado = crearCelda(usuario.estado);
     const tdRol = crearCelda(usuario.rol);
     const tdResidencia = crearCelda(usuario.residencia);
-    const tdTipoCliente = crearCelda(usuario.tipo_cliente);
     const tdUsuario = crearCelda(usuario.usuario);
     const tdContrasena = crearCelda(usuario.contrasena);
     console.log(usuario)
@@ -90,8 +89,7 @@ async function crear(data) {
     // Agregar todos a la fila
     fila.append(
       tdId, tdNombre, tdDocumento, tdTipoDoc, tdGenero, tdDireccion, tdTelefono,
-      tdCorreo, tdEstado, tdRol, tdResidencia, tdTipoCliente,
-      tdUsuario, tdContrasena, tdAcciones
+      tdCorreo, tdEstado, tdRol, tdResidencia, tdUsuario, tdContrasena, tdAcciones
     );
 
     cuerpo.appendChild(fila);

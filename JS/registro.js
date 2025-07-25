@@ -29,7 +29,7 @@ formulario.addEventListener("submit", async (e) => {
 
   // ✅ Agregamos valores por defecto
   datos.estado = "Activo";
-  datos.rol = datos.tipo_cliente; // asumimos que tipo_cliente viene del <select>
+  datos.tipo_cliente = datos.rol;  // asumimos que tipo_cliente viene del <select>
 
   try {
     const res = await post("/usuarios/registrar", datos);
@@ -42,8 +42,8 @@ formulario.addEventListener("submit", async (e) => {
       alert("❌ Error: " + result);
     }
   } catch (err) {
-    alert("❌ No se pudo registrar");
-    console.error(err);
+    alert("❌ No se pudo registrar",err);
+   
   }
 });
 
