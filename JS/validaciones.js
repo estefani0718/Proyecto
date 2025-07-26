@@ -106,6 +106,38 @@ export const campo = (event) => {
   }
 };
 
+// Función reutilizable para cargar modales desde archivos HTML
+export async function cargarModal(path, contenedorSelector, idModalEsperado) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error('No se pudo cargar el archivo: ' + path);
+
+    const html = await response.text();
+
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+
+    const modal = tempDiv.querySelector('#' + idModalEsperado);
+    const contenedor = document.querySelector(contenedorSelector);
+
+    if (!modal) {
+      console.error(`❌ No se encontró el modal con ID "#${idModalEsperado}" en ${path}`);
+      return null;
+    }
+
+    if (!contenedor) {
+      console.error(`❌ No se encontró el contenedor "${contenedorSelector}"`);
+      return null;
+    }
+
+    contenedor.appendChild(modal);
+    return modal;
+
+  } catch (error) {
+    console.error('❌ Error al cargar el modal:', error);
+    return null;
+  }
+}
 
 
 

@@ -17,7 +17,7 @@
       </a>
     </div> 
     <div class="header__icono--tamaño " >
-      <h3 class="titulo__perfil">perfil: <span id="nombre_usuario">laura</span></h3>
+      <h3 class="titulo__perfil">perfil: <span id="nombre_usuario">Carlos</span></h3>
       <div class="content_icono">
         <i class="ri-user-fill icono--border" ></i>
       </div>
@@ -28,9 +28,9 @@
     
     <div class="header__check">
       <input type="checkbox" class="input__check" id="activo">
-      <label for="activo" class="titulo__perfil label" >informacion</label>
+      <label for="activo" class="titulo__perfil label" >Datos usuario</label>
       <div class="content_usuario">
-        <div class="">
+        <div class=" info_usuario">
           <div>
             <label for="titulo__perfil">nombre:</label>
           </div>
@@ -54,27 +54,30 @@
  
   </header>
   <main class="contenido__vista" >
-    <div class="sidebar">
+    
+    <section class="content__user">
+       <div class="panel_text">Panel de opciones</div>
+       <div class="sidebar">
       <div class="sidebar__opciones">
-        <div class="input__entrada">
-          <a href="#">notificaciones</a>
+        <div class="sidebar__item">
+          <a href="#">notificaciones  <span class="badge" id="notifBadge">1</span></a>
         </div>
-        <div class="input__entrada">
-          <a href="#">Pedidos</a>
+        <div class="sidebar__item">
+          <a href="#">Pedidos </a>
         </div>
-        <div>
-          <a href=""></a>
+        <div class="sidebar__item">
+          <a href="#"> Ganancias del dia</a>
         </div>
-        <div>
-          <a href="#"></a>
+        <div class="sidebar__item">
+          <a href="#"> Factura</a>
         </div>
       </div>
-    </div>
-    <section class="content__user">
-      <div>PANEL</div>
-      
-      
+    </div >
+      <div class="content_panel" >
+       
+      </div>
     </section>
   </main>
+  <script type="module" src="/JS/usuario.js"></script>
 </body>
 </html>

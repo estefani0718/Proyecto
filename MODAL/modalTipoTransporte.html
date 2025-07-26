@@ -1,0 +1,20 @@
+<!-- modalTipoTransporte.html -->
+<dialog id="modalTipoTransporte">
+  <form method="dialog" id="formTipoTransporte" >
+    <h2>Registrar Tipo de Transporte</h2>
+
+    <label for="placa">Placa:</label>
+    <input type="text" id="placa" name="placa" maxlength="8" required />
+
+    <label for="nombre_transporte">Nombre del Transporte:</label>
+    <input type="text" id="nombre_transporte" name="nombre_transporte" maxlength="8" required />
+
+    <label for="modelo_vehiculo">Modelo del Vehículo:</label>
+    <input type="text" id="modelo_vehiculo" name="modelo_vehiculo" maxlength="20" required />
+
+    <menu>
+      <button type="submit">Guardar</button>
+      <button type="button" onclick="document.getElementById('modalTipoTransporte').close()">Cancelar</button>
+    </menu>
+  </form>
+</dialog>

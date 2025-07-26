@@ -1,0 +1,17 @@
+<!-- modalTransporteUsuario.html -->
+<dialog id="modalTransporteUsuario">
+  <form method="dialog" id="formTransporteUsuario">
+    <h2>Datos de Transporte del Domiciliario</h2>
+
+    <label for="placa_asociada">Placa Asociada:</label>
+    <input type="text" id="placa_asociada" name="placa" maxlength="8" required />
+
+    <label for="anios_experiencia">Años de Experiencia:</label>
+    <input type="number" id="anios_experiencia" name="anios_experiencia" min="0" required />
+
+    <menu>
+      <button type="submit">Guardar</button>
+      <button type="button" onclick="document.getElementById('modalTransporteUsuario').close()">Cancelar</button>
+    </menu>
+  </form>
+</dialog>

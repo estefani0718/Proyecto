@@ -1,0 +1,109 @@
+.modal-notif {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+ margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-style: normal;
+}
+
+.modal-notif h3 {
+  margin-top: 0;
+}
+
+.modal-notif ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Oculto por defecto */
+.oculto {
+  display: none;
+}
+/* dialog {
+  width: 90%;
+  max-width: 500px;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s ease-in-out; */
+/* } */ 
+
+/* button:hover {
+  background-color: #45a049;
+}   */
+
+
+
+/* Botones */
+  /* .button {
+    margin-right: 6px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+
+  .button:first-child {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  .button:hover {
+    opacity: 0.85;
+  } */
