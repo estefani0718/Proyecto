@@ -1,0 +1,28 @@
+<dialog id="modalCrearTipoDocumento">
+  <form method="dialog" class="modal-content">
+    <h3>Crear Tipo de Documento</h3>
+
+    <label for="nuevoTipoDoc">Tipo de Documento:</label>
+    <input type="text" id="nuevoTipoDoc" maxlength="20" required>
+
+    <div class="botones">
+      <button type="button" id="btnGuardarTipoDoc">Guardar</button>
+      <button type="button" id="btnCerrarCrearTipoDoc">Cerrar</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="modalActualizarTipoDocumento">
+  <form method="dialog" class="modal-content">
+    <h3>Actualizar Tipo de Documento</h3>
+
+    <input type="hidden" id="idTipoDocActualizar"> <!-- Oculto, para guardar el ID -->
+
+    <label for="editarTipoDoc">Tipo de Documento:</label>
+    <input type="text" id="editarTipoDoc" maxlength="20" required>
+
+    <div class="botones">
+      <button type="button" id="btnActualizarTipoDoc">Guardar</button>
+      <button type="button" id="btnCerrarActualizarTipoDoc">Cerrar</button>
+    </div>
+  </form>
+</dialog>

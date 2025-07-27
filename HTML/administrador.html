@@ -11,19 +11,87 @@
 </head>
 
 <body>
-  <header class="header__vista  header__formulario">
-    <div class="header__icono--tamaño " >
-      <h3 class="input__entrada">perfil: <span id="nombre_usuario"></span></h3>
-      <i class="ri-user-fill icono" ></i>
-   </div>
-   <h3>estado</h3>
-    <div>
-      <h2>informacion del usuario</h2>
-    </div>
-  </header>
+  <header class="header__vista header__formulario">
+      <div class="header__anterior">
+        <a href="index.html" class="header__anterior-link">
+          <i class="ri-arrow-left-fill"></i>
+        </a>
+      </div>
+      <div class="header__icono--tamaño">
+        <h3 class="titulo__perfil">
+          perfil: <span id="nombre_usuario">Estefani</span>
+        </h3>
+        <div class="content_icono">
+          <i class="ri-user-fill icono--border"></i>
+        </div>
+      </div>
+      <div class="contendor__inputs gap">
+        <h3 class="titulo__perfil">
+          Estado: <span id="estado_usuario">activo</span>
+        </h3>
+
+        <div class="header__check">
+          <input type="checkbox" class="input__check" id="activo" />
+          <label for="activo" class="titulo__perfil label">informacion</label>
+          <div class="content_usuario">
+            <div class="">
+              <div>
+                <label for="titulo__perfil">nombre:</label>
+              </div>
+              <div>
+                <label for="titulo__perfil">edad :</label>
+              </div>
+              <div>
+                <label for="titulo__perfil">estado:</label>
+              </div>
+              <div>
+                <label for="titulo__perfil"> :</label>
+              </div>
+              <div>
+                <label for="titulo__perfil">edad :</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
     
   <main>
-    <div class="caja-tabla">
+    <div class="filtador">
+      <div class="filtador__item">
+        <h5 class="">filtrar por usuarios</h5>
+        <select name="" id="">
+          <option value="">Domiciliario</option>
+          <option value="">Cliente</option>
+        </select>
+      </div>
+      <div class="filtador__item">
+        <h5 class="">filtrar por vehiculo</h5>
+        <select name="" id="">
+          <option value="">Moto</option>
+          <option value="">carro</option>
+        </select>
+      </div>
+      
+    </div>
+   
+    <div class="content__admin">
+      <div  class="flex">
+        <h3 class="titulo__perfil centrar ">Contenido del administrador / Tablas  </h3>
+      </div>
+      <div class="menu__tablas">
+        <div class=""><a href="#">TipoDocumento</a></div>
+        <div  class=""><a href="#">Tipo Transporte</a></div>
+        <div class=""><a href="#">Residencia</a></div>
+        <div class=""><a href="#">categoriapaquete</a></div>
+        <div class=""><a href="#">Roles</a></div>
+        <div class=""><a href="#">Estados</a></div>
+        <div class=""><a href="#">Usuarios</a></div>
+        <div class=""><a href="#">TransporteUsuario</a></div>
+        <div class=""><a href="#">Factura</a></div>
+        <div class=""><a href="#">TipoPaquete</a></div>
+      </div>
+      <div class="caja-tabla">
       <table class="mi-tabla" id="tablaUsuarios">
         <thead>
           <tr>
@@ -47,6 +115,7 @@
           <!-- Filas dinámicas se insertan aquí -->
         </tbody>
       </table>
+    </div>
     </div>
   </main>
     <script src="/JS/admin.js"></script>

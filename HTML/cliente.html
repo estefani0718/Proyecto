@@ -9,6 +9,8 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   </head>
   <body>
     <header class="header__vista header__formulario">
@@ -56,23 +58,29 @@
       </div>
     </header>
     <main class="contenido__vista">
-      <div class="sidebar">
-        <div class="">
-          <div>
-            <a href="#">notificaciones</a>
-          </div>
-          <div>
-            <a href="#">Tomar pedido</a>
-          </div>
-          <div>
-            <a href="#"></a>
-          </div>
-          <div>
-            <a href="#"></a>
-          </div>
+      <section class="content__user">
+       <div class="panel_text">Panel de opciones</div>
+       <div class="sidebar">
+      <div class="sidebar__opciones">
+        <div class="sidebar__item">
+          <a href="#">notificaciones  <span class="badge" id="notifBadge">1</span></a>
+        </div>
+        <div class="sidebar__item">
+          <a href="#"> Hacer Pedidos </a>
+        </div>
+        <div class="sidebar__item">
+          <a href="#">Contactar </a>
+        </div>
+        <div class="sidebar__item">
+          <a href="#"> Ver Factura</a>
         </div>
       </div>
-      <section class="content__user"></section>
+    </div >
+      <div class="content_panel" >
+       
+      </div>
     </main>
+
   </body>
+  <script type="module" src="/JS/usuario.js"></script>
 </html>
