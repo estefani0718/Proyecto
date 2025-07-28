@@ -24,25 +24,36 @@ tTipocliente.addEventListener('blur',campo)
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const datos = validarFormulario(e.target);
-  if (!datos) return;
+  const datosOriginales = validarFormulario(e.target);
 
-  // ✅ Agregamos valores por defecto
-  datos.estado = "Activo";
-  datos.tipo_cliente = datos.rol;  // asumimos que tipo_cliente viene del <select>
+  const datosMapeados = {
+    nombre_usuario: datosOriginales.nombre,
+    tipo_documento: datosOriginales.tipoDocumento,
+    documento_usuario: datosOriginales.documento,
+    genero_usuario: datosOriginales.genero,
+    direccion_usuario: datosOriginales.direccion,
+    telefono_usuario: datosOriginales.telefono,
+    correo: datosOriginales.email,
+    residencia: datosOriginales.residencia,
+    rol: datosOriginales.tipoCliente,
+    usuario: datosOriginales.usuario,
+    contrasena: datosOriginales.contrasena,
+    estado: "Activo"
+  };
+ console.log(datosMapeados)
 
   try {
-    const res = await post("/usuarios/registrar", datos);
+    const res = await post("/usuarios/registrar", datosMapeados);
     const result = await res.json();
 
-    if (res.ok) {
+    if (result.ok) {
       alert("✅ Usuario registrado correctamente");
-      formulario.reset(); // limpia el formulario
+      formulario.reset(); 
     } else {
       alert("❌ Error: " + result);
     }
   } catch (err) {
-    alert("❌ No se pudo registrar",err);
+    alert("",err);
    
   }
 });

@@ -35,7 +35,7 @@ export const validarFormulario = (form) => {
           marcarError(el, `El campo ${el.name} no ha sido seleccionado`);
           hayErrores = true;
         } else {
-          datosPersona[el.name] = el.options[el.selectedIndex].value;
+          datosPersona[el.name] = el.options[el.selectedIndex].text; 
         }
         break;
     }

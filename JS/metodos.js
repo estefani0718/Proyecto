@@ -7,13 +7,20 @@ export const get = async (endpoint) => {
 
 
 export const post = async (endpoint, data) => {
-    return await fetch(url + endpoint, {
+   const response = await fetch(url + endpoint, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
     });
+
+    const result = await response.json(); 
+    return {
+        status: response.status,
+        ok: response.ok,
+        data: result
+    };
 };
 
 
