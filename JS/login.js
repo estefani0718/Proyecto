@@ -3,18 +3,18 @@ import { post } from "./metodos.js";
 
 const formulario = document.querySelector("#form__login");
 
-
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log("que paso")
   const datos = validarFormulario(e.target);
   if (!datos) return;
+
   try {
     const res = await post("/usuarios/login", datos);
     const usuario = res.data;
-    console.log(data)
+    console.log(usuario); 
+
     if (res.ok && typeof usuario === "object") {
-      alert("✅ Bienvenido " + usuario.usuario);
+      alert("Bienvenido " + usuario.usuario);
       sessionStorage.setItem("usuario", JSON.stringify(usuario));
 
       if (usuario.rol === "Cliente" || usuario.tipo_cliente === "Cliente") {
@@ -24,7 +24,7 @@ formulario.addEventListener("submit", async (e) => {
       } else if (usuario.rol === "Admin" || usuario.tipo_cliente === "Admin") {
         window.location.href = "administrador.html";
       } else {
-        window.location.href = "administrador.html";
+        window.location.href = "index.html";
       }
     } else {
       alert("❌ " + usuario);
