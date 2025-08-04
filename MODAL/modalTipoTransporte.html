@@ -1,20 +1,26 @@
-<!-- modalTipoTransporte.html -->
-<dialog id="modalTipoTransporte">
-  <form method="dialog" id="formTipoTransporte" >
-    <h2>Registrar Tipo de Transporte</h2>
+<dialog id="modal-transporte" class="form__dialog">
+  <form id="form-transporte" class="form-doc">
+    <h2 id="titulo-modal" class="">Crear Tipo de Transporte</h2>
 
-    <label for="placa">Placa:</label>
-    <input type="text" id="placa" name="placa" maxlength="8" required />
+    <!-- Campo oculto si necesitas actualizar -->
+    <input type="hidden" id="placa_original">
 
-    <label for="nombre_transporte">Nombre del Transporte:</label>
-    <input type="text" id="nombre_transporte" name="nombre_transporte" maxlength="8" required />
+    <!-- Campo Placa -->
+    <label class="caja__input">Placa:</label>
+    <input type="text" id="placa" name="placa" class="caja__input" maxlength="8" required>
 
-    <label for="modelo_vehiculo">Modelo del Vehículo:</label>
-    <input type="text" id="modelo_vehiculo" name="modelo_vehiculo" maxlength="20" required />
+    <!-- Campo Nombre del Transporte -->
+    <label class="caja__input">Nombre del Transporte:</label>
+    <input type="text" id="nombre_transporte" name="nombre_transporte" class="caja__input" maxlength="8" required>
 
-    <menu>
-      <button type="submit">Guardar</button>
-      <button type="button" onclick="document.getElementById('modalTipoTransporte').close()">Cancelar</button>
-    </menu>
+    <!-- Campo Modelo del Vehículo -->
+    <label class="caja__input">Modelo del Vehículo:</label>
+    <input type="text" id="modelo_vehiculo" name="modelo_vehiculo" class="caja__input" maxlength="20" required>
+
+    <div class="modal-botones">
+      <button type="submit" class="Buton__entrar" id="btn_guardar">Guardar</button>
+      <button type="button" id="btn__cancelar" class="Buton__entrar">Cancelar</button>
+    </div>
   </form>
 </dialog>
+

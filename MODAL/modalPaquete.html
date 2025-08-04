@@ -1,25 +1,41 @@
-<dialog id="modalEnviarPaquete" class="modal">
-  <form method="dialog" class="modal-content">
-    <h2>Enviar Detalles del Paquete</h2>
+<dialog id="modal-tipo-paquete" class="form__dialog">
+  <form id="form-tipo-paquete" class="form-doc">
+    <h2 id="titulo-modal-tipo-paquete">Registrar Tipo de Paquete</h2>
 
-    <label for="nombrePaquete">Nombre del Paquete:</label>
-    <input type="text" id="nombrePaquete" placeholder="Ej: Caja mediana" required />
+    <!-- Campo oculto para edición -->
+    <input type="hidden" id="codigo_Tpaquete">
 
-    <label for="detallesPaquete">Detalles adicionales:</label>
-    <textarea id="detallesPaquete" rows="3" placeholder="Ej: Frágil, entregar rápido..."></textarea>
+    <!-- Nombre del Paquete -->
+    <label class="caja__input">Nombre del Paquete:</label>
+    <input type="text" id="nombre_paquete" name="nombre_paquete" class="caja__input" maxlength="30" required>
 
-    <label for="origen">Origen:</label>
-    <input type="text" id="origen" placeholder="Ej: Calle 10 #12-34" required />
+    <!-- Detalles Adicionales -->
+    <label class="caja__input">Detalles Adicionales:</label>
+    <input type="text" id="detalles_adicionales" name="detalles_adicionales" class="caja__input" maxlength="40">
 
-    <label for="destino">Destino:</label>
-    <input type="text" id="destino" placeholder="Ej: Carrera 45 #22-11" required />
+    <!-- Código de Categoría (FK a CategoriaPaquete) -->
+    <label class="caja__input">Categoría del Paquete (Código):</label>
+    <input type="number" id="codigo_paquete" name="codigo_paquete" class="caja__input" required>
 
-    <label for="valor">Valor del Paquete(un aproximado del pago):</label>
-    <input type="number" id="valor" placeholder="Ej: 15000" required />
+    <!-- Estado -->
+    <label class="caja__input">Estado (ID):</label>
+    <input type="number" id="id_estado" name="id_estado" class="caja__input" required>
 
-    <div class="modal-actions">
-      <button id="btnEnviarPaquete">Enviar Paquete</button>
-      <button onclick="document.getElementById('modalEnviarPaquete').close()">Cancelar</button>
+    <!-- Origen -->
+    <label class="caja__input">Origen:</label>
+    <input type="text" id="origen" name="origen" class="caja__input" maxlength="30" required>
+
+    <!-- Método de Pago -->
+    <label class="caja__input">Método de Pago:</label>
+    <input type="text" id="metodo_pago" name="metodo_pago" class="caja__input" maxlength="20" required>
+
+    <!-- Destino -->
+    <label class="caja__input">Destino:</label>
+    <input type="text" id="destino" name="destino" class="caja__input" maxlength="30" required>
+
+    <div class="modal-botones">
+      <button type="submit" class="Buton__entrar" id="btn_guardar_tipo_paquete">Guardar</button>
+      <button type="button" class="Buton__entrar" id="btn_cancelar_tipo_paquete">Cancelar</button>
     </div>
   </form>
 </dialog>

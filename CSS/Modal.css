@@ -107,3 +107,40 @@ button {
   .button:hover {
     opacity: 0.85;
   } */
+
+
+.form__dialog{
+  width: 50%;
+  height: 40vh;
+  border: none;
+  margin: 0 auto ;
+ padding: 10px;
+ border-radius: 30px;
+ margin-top: 13vw;
+ background-color: var(--color__blanco-hueso);
+}
+.form__dialog form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: var(--color__azul);
+  border-radius: 30px;
+  padding: 1vw;
+}
+
+
+
+
+.modal-botones {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 2vw;
+ padding: 2px;
+}
+
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}

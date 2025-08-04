@@ -1,28 +1,18 @@
-<dialog id="modalCrearResidencia">
-  <form method="dialog" class="modal-content">
-    <h3>Crear Residencia</h3>
+<dialog id="modal-residencia" class="form__dialog">
+  <form id="form-residencia" class="form-doc">
+    <h2 id="titulo-modal-residencia">Crear Residencia</h2>
 
-    <label for="nuevoMunicipio">Nombre del Municipio:</label>
-    <input type="text" id="nuevoMunicipio" maxlength="20" required>
+    <!-- Campo oculto para edición -->
+    <input type="hidden" id="codigo_residencia">
 
-    <div class="botones">
-      <button type="button" id="btnGuardarResidencia">Guardar</button>
-      <button type="button" id="btnCerrarCrearResidencia">Cerrar</button>
+    <!-- Campo Nombre del Municipio -->
+    <label class="caja__input">Nombre del Municipio:</label>
+    <input type="text" id="nombre_municipio" name="nombre_municipio" class="caja__input" maxlength="20" required>
+
+    <div class="modal-botones">
+      <button type="submit" class="Buton__entrar" id="btn_guardar_residencia">Guardar</button>
+      <button type="button" class="Buton__entrar" id="btn_cancelar_residencia">Cancelar</button>
     </div>
   </form>
 </dialog>
-<dialog id="modalActualizarResidencia">
-  <form method="dialog" class="modal-content">
-    <h3>Actualizar Residencia</h3>
 
-    <input type="hidden" id="idResidenciaActualizar"> <!-- ID oculto -->
-
-    <label for="editarMunicipio">Nombre del Municipio:</label>
-    <input type="text" id="editarMunicipio" maxlength="20" required>
-
-    <div class="botones">
-      <button type="button" id="btnActualizarResidencia">Guardar</button>
-      <button type="button" id="btnCerrarActualizarResidencia">Cerrar</button>
-    </div>
-  </form>
-</dialog>

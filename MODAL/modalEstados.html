@@ -1,34 +1,21 @@
-<dialog id="modalCrearEstado">
-  <form method="dialog" class="modal-content">
-    <h3>Crear Estado</h3>
+<dialog id="modal-estados" class="form__dialog">
+  <form id="form-estados" class="form-doc">
+    <h2 id="titulo-modal-estados">Crear Estado</h2>
 
-    <label for="nuevoEstado">Nombre del Estado:</label>
-    <input type="text" id="nuevoEstado" maxlength="50" required>
+    <!-- Campo oculto para edición -->
+    <input type="hidden" id="id_estado">
 
-    <label for="nuevaEntidad">Nombre de la Entidad:</label>
-    <input type="text" id="nuevaEntidad" maxlength="50" required>
+    <!-- Campo Nombre del Estado -->
+    <label class="caja__input">Nombre del Estado:</label>
+    <input type="text" id="nombre_estado" name="nombre_estado" class="caja__input" maxlength="50" required>
 
-    <div class="botones">
-      <button type="button" id="btnGuardarEstado">Guardar</button>
-      <button type="button" id="btnCerrarCrearEstado">Cerrar</button>
-    </div>
-  </form>
-</dialog>
-<dialog id="modalActualizarEstado">
-  <form method="dialog" class="modal-content">
-    <h3>Actualizar Estado</h3>
+    <!-- Campo Nombre de la Entidad -->
+    <label class="caja__input">Nombre de la Entidad:</label>
+    <input type="text" id="nombre_entidad" name="nombre_entidad" class="caja__input" maxlength="50" required>
 
-    <input type="hidden" id="idEstadoActualizar">
-
-    <label for="editarEstado">Nombre del Estado:</label>
-    <input type="text" id="editarEstado" maxlength="50" required>
-
-    <label for="editarEntidad">Nombre de la Entidad:</label>
-    <input type="text" id="editarEntidad" maxlength="50" required>
-
-    <div class="botones">
-      <button type="button" id="btnActualizarEstado">Guardar</button>
-      <button type="button" id="btnCerrarActualizarEstado">Cerrar</button>
+    <div class="modal-botones">
+      <button type="submit" class="Buton__entrar" id="btn_guardar_estado">Guardar</button>
+      <button type="button" class="Buton__entrar" id="btn_cancelar_estado">Cancelar</button>
     </div>
   </form>
 </dialog>
