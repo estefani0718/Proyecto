@@ -52,8 +52,9 @@ formulario.addEventListener("submit", async (e) => {
     } else {
       alert("❌ Error: " + result);
     }
-  } catch (err) {
-    alert("",err);
+  } catch (error) {
+    console.error();
+     formulario.reset(); 
    
   }
 });

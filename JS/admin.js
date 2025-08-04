@@ -162,7 +162,7 @@ usuarios.addEventListener("click", () => {
       },(id) => {
          alert("hola",id)
       },(id) => {
-        const enpoint=`/`;
+        const enpoint=`/usuarios/id`;
       
         confirmarEliminacion(id, enpoint);
        },
