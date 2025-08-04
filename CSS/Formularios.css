@@ -278,9 +278,6 @@ font-style: oblique;
 }
 .tabla-header{
   display: flex;
-  margin-right: 15vw;
- justify-content: end;
- margin-bottom: 10px;
 }
 /* Tabla principal */
 .mi-tabla {
@@ -305,10 +302,10 @@ font-style: oblique;
  font-style: italic;
 }
 
-/* Cuerpo de la tabla
+/* Cuerpo de la tabla */
 .fila-data:nth-child(even) {
   background-color: #f2f2f2;
-} */
+}
 
 .fila-data:nth-child(odd) {
   background-color: #ffffff;

@@ -1,5 +1,7 @@
 import { cargarTablaGeneral } from "./crearTabla.js";
 import { cargarModal ,confirmarEliminacion} from "./modal.js";
+import { validarFormulario } from "./validaciones.js";
+
 
 
 
@@ -27,7 +29,7 @@ tipo.addEventListener("click", () => {
       () => {
         cargarModal('modalDocumento.html',"modal-doc",enpoint)
       },(id) => {
-         alert("hola",id)
+       
       },(id) => {
         const enpoint=`/TipoDocumento`;
       
@@ -54,7 +56,7 @@ trasnporte.addEventListener("click", () => {
       },(id) => {
          alert("hola",id)
       },(id) => {
-        const enpoint=`/`;
+        const enpoint=`/TipoTransporte/`;
       
         confirmarEliminacion(id, enpoint);
        },
@@ -72,11 +74,11 @@ residencia.addEventListener("click", () => {
       ["codigo_residencia", "nombre_municipio"],
       () => {
          const enpoint="/residencia/crear";
-         cargarModal('modalTipoTransporte.html',"modal-transporte",enpoint)
+         cargarModal('modalResidencia.html',"modal-residencia",enpoint)
       },(id) => {
          alert("hola",id)
       },(id) => {
-        const enpoint=`/`;
+        const enpoint=`/residencia`;
       
         confirmarEliminacion(id, enpoint);
        },

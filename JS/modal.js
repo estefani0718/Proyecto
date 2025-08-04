@@ -83,4 +83,28 @@ export async function confirmarEliminacion(id, endpoint) {
     alert("Eliminación cancelada por el usuario.");
   }
 }
+export async function confirmarActualizacion(id, datosActualizados, endpoint) {
+  const confirmar = confirm("¿Estás seguro de que deseas actualizar este registro?");
+
+  if (confirmar) {
+    try {
+      const res = await put(endpoint, id, datosActualizados);
+
+      if (!res.ok) {
+        alert("No se pudo actualizar el registro.");
+        return;
+      }
+
+      const resultado = await res.json();
+      alert(resultado.mensaje || "Registro actualizado correctamente.");
+      // Aquí podrías recargar la tabla o actualizar la vista
+    } catch (error) {
+      console.error("Error al actualizar:", error);
+      alert("Ocurrió un error al actualizar el registro.");
+    }
+  } else {
+    alert("Actualización cancelada por el usuario.");
+  }
+}
+
 
