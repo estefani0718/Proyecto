@@ -263,8 +263,8 @@ font-style: oblique;
 .span{
   color: red;
   font-size: 0.75rem;
-  margin-top: 3px;
   position: relative;
+  margin-left: 5px ;
 }
 
 /* Contenedor general */

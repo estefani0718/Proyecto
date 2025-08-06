@@ -27,8 +27,6 @@ export  function abrirModal(idModal,enpoint) {
                 }
             
         } else if (btnClickeado.id === "btn_actualizar") {
-            const btnactu=document.querySelector("#btn_actualizar")
-            btnactu.style.display="inline-block";
             alert("Actualizando...");
         }
         else if(btnClickeado.id === "btn__cancelar"){  
@@ -36,6 +34,7 @@ export  function abrirModal(idModal,enpoint) {
           alert("cerrando...")
         }
     });
+  
 }
 
 

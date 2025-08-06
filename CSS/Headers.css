@@ -177,7 +177,7 @@ input[type="checkbox"]:checked + label {
   flex-direction: column;
 }
 .input__check:checked ~ .content_usuario{
-  height: 50vh; /* lo suficiente para mostrar el contenido */
+  height: 50vh; 
   top: 50px;
   left: 100px;
  }

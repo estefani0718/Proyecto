@@ -1,13 +1,12 @@
-import { validarText, validarNum, campo, validarFormulario } from "./validaciones.js";
+import { validarText,validarFormulario } from "./validaciones.js";
 import { post } from "./metodos.js";
 
 const formulario = document.querySelector("#form__login");
-//  const user=document.querySelector("input[name='usuario']");
+ const user=document.querySelector("input[name='usuario']");
 
+user.addEventListener("keydown", validarText);
 formulario.addEventListener("submit", async (e) => {
   e.preventDefault();
-   
-    
    const datos = validarFormulario(e.target);
   if (!datos) return;
   try {

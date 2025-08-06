@@ -4,12 +4,11 @@ const formulario = document.querySelector("#form__registro");
 
 const nombre = formulario.querySelector('input[name="nombre"]');
 const documento = formulario.querySelector('input[name="documento"]');
-const generos = formulario.querySelectorAll('input[name="genero"]');
+
 const direccion = formulario.querySelector('input[name="direccion"]');
 const telefono = formulario.querySelector('input[name="telefono"]');
 const email = formulario.querySelector('input[name="email"]');
-const residencia = formulario.querySelector('select[name="residencia"]');
-const usuario = formulario.querySelector('input[name="usuario"]');
+
 const tTipocliente = formulario.querySelector('select[name="tipoCliente"]');
 
 nombre.addEventListener("keydown", validarText);
@@ -40,14 +39,14 @@ formulario.addEventListener("submit", async (e) => {
     contrasena: datosOriginales.contrasena,
     estado: "Activo"
   };
- console.log(datosMapeados)
+  console.log(datosMapeados)
 
   try {
     const res = await post("/usuarios/registrar", datosMapeados);
     const result = await res.json();
 
     if (result.ok) {
-      alert("✅ Usuario registrado correctamente");
+      alert("Usuario registrado correctamente");
       formulario.reset(); 
     } else {
       alert("❌ Error: " + result);

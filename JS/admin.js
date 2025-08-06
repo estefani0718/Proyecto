@@ -228,7 +228,6 @@ factura.addEventListener("click", () => {
          alert("hola",id)
       },(id) => {
         const enpoint=`/`;
-      
         confirmarEliminacion(id, enpoint);
        },
       contenedor // Aquí se pega la tabla
