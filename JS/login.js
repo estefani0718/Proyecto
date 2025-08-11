@@ -11,14 +11,17 @@ formulario.addEventListener("submit", async (e) => {
   if (!datos) return;
   try {
     const res = await post("/usuarios/login", datos);
-    console.log("Respuesta del backend:", res); 
+    console.log("Respuesta del backend:", res);  
 
     const usuario = res.data;
 
     if (res.ok && typeof usuario === "object") {
       alert("Bienvenido " + usuario.usuario);
       sessionStorage.setItem("usuario", JSON.stringify(usuario));
-
+      
+    // Guardar el id_usuario por separado
+      sessionStorage.setItem("usuario_id", usuario.id_usuario); 
+      
       const rol = usuario.rol?.toLowerCase();
       const tipo = usuario.tipo_cliente?.toLowerCase();
 

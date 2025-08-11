@@ -16,6 +16,7 @@ const usuarios=document.querySelector("#usuarios");
 const transporteusu=document.querySelector("#transporte");
 const factura=document.querySelector("#factura");
 const tipopaa=document.querySelector("#paquete");
+const detallepa=document.querySelector("#depaquete");
 
 tipo.addEventListener("click", () => {
   // Si ya hay una tabla visible, se oculta
@@ -95,7 +96,8 @@ categoria.addEventListener("click", () => {
       "http://localhost:8080/ProyectoDomiexpro/api/categorias",
       ["codigoPaquete", "nombre_categoria"],
       () => {
-        console.log("Crear nuevo tipo de documento");
+        const enpoint="/residencia/crear";
+         cargarModal('modalResidencia.html',"modal-residencia",enpoint)
       },(id) => {
          alert("hola",id)
       },(id) => {
@@ -116,7 +118,8 @@ roles.addEventListener("click", () => {
       "http://localhost:8080/ProyectoDomiexpro/api/roles",
       ["codigo_rol", "nombre_rol"],
       () => {
-        console.log("Crear nuevo tipo de documento");
+         const enpoint="/residencia/crear";
+         cargarModal('modalResidencia.html',"modal-residencia",enpoint)
       },(id) => {
          alert("hola",id)
       },(id) => {
@@ -137,7 +140,8 @@ estados.addEventListener("click", () => {
       "http://localhost:8080/ProyectoDomiexpro/api/estados",
       ["id_estado", "nombre_estado","nombre_entidad"],
       () => {
-        console.log("Crear nuevo tipo de documento");
+         const enpoint="/estados/crear";
+         cargarModal('modalEstados.html',"modal-estados",enpoint)
       },(id) => {
          alert("hola",id)
       },(id) => {
@@ -234,5 +238,25 @@ factura.addEventListener("click", () => {
     );
   }
 });
-
+detallepa.addEventListener("click", () => {
+  // Si ya hay una tabla visible, se oculta
+  if (contenedor.innerHTML.trim() !== "") {
+    contenedor.innerHTML = ""; // Limpiar contenido para ocultar
+  } else {
+    cargarTablaGeneral(
+      "http://localhost:8080/ProyectoDomiexpro/api/detalle-paquete",
+      ["codigo_dll_paquete ", "codigo_Tpaquete","codigo_TransporteUsuario","codigo_factura","valor_paquete","observaciones"
+      ],
+      () => {
+        
+      },(id) => {
+         alert("hola",id)
+      },(id) => {
+        const enpoint=`/`;
+        confirmarEliminacion(id, enpoint);
+       },
+      contenedor // Aquí se pega la tabla
+    );
+  }
+});
 

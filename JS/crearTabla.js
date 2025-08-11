@@ -80,9 +80,7 @@ function crearTablaDinamica(data, columnas, callbackCrear,callbackEditar,callbac
     btnEditar.classList.add("Buton__entrar");
     btnEditar.setAttribute("data-id",idValor);
    btnEditar.addEventListener("click", () => callbackEditar(idValor));
-
-    // Puedes agregar el eventListener aquí
-
+   
     const btnEliminar = document.createElement("button");
     btnEliminar.textContent = "Eliminar";
     btnEliminar.classList.add("Buton__entrar");

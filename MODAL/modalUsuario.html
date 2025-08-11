@@ -1,0 +1,75 @@
+<dialog id="modal-usuario" class="form__dialog">
+  <form id="form-usuario" class="form-doc">
+    <h2 id="titulo-modal">Registrar Usuario Cliente</h2>
+
+    <!-- Campo oculto para edición -->
+    <input type="hidden" id="id_usuario">
+
+    <!-- Nombre -->
+    <label class="caja__input">Nombre:</label>
+    <input type="text" id="nombre_usuario" name="nombre_usuario" class="caja__input" maxlength="30" required>
+
+    <!-- Documento -->
+    <label class="caja__input">Documento:</label>
+    <input type="number" id="documento_usuario" name="documento_usuario" class="caja__input" required>
+
+    <!-- Tipo Documento -->
+    <label class="caja__input">Tipo de Documento:</label>
+    <select id="codigo_Tdocumento" name="codigo_Tdocumento" class="caja__input" required>
+      <!-- Opciones se cargan dinámicamente -->
+    </select>
+
+    <!-- Género -->
+    <label class="caja__input">Género:</label>
+    <select id="genero_usuario" name="genero_usuario" class="caja__input" required>
+      <option value="">Seleccione</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+      <option value="Otro">Otro</option>
+    </select>
+
+    <!-- Dirección -->
+    <label class="caja__input">Dirección:</label>
+    <input type="text" id="direccion_usuario" name="direccion_usuario" class="caja__input" maxlength="40">
+
+    <!-- Teléfono -->
+    <label class="caja__input">Teléfono:</label>
+    <input type="tel" id="telefono_usuario" name="telefono_usuario" class="caja__input" maxlength="10" required>
+
+    <!-- Correo -->
+    <label class="caja__input">Correo:</label>
+    <input type="email" id="correo" name="correo" class="caja__input" maxlength="30">
+
+    <!-- Estado -->
+    <label class="caja__input">Estado:</label>
+    <select id="id_estado" name="id_estado" class="caja__input" required>
+      <!-- Opciones se cargan dinámicamente -->
+    </select>
+
+    <!-- Rol -->
+    <label class="caja__input">Rol:</label>
+    <select id="codigo_rol" name="codigo_rol" class="caja__input" required>
+      <!-- Opciones se cargan dinámicamente -->
+    </select>
+
+    <!-- Residencia -->
+    <label class="caja__input">Residencia:</label>
+    <select id="codigo_residencia" name="codigo_residencia" class="caja__input" required>
+      <!-- Opciones se cargan dinámicamente -->
+    </select>
+
+    <!-- Usuario -->
+    <label class="caja__input">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" class="caja__input" maxlength="30" required>
+
+    <!-- Contraseña -->
+    <label class="caja__input">Contraseña:</label>
+    <input type="password" id="contrasena" name="contrasena" class="caja__input" maxlength="30" required>
+
+    <!-- Botones -->
+    <div class="modal-botones">
+      <button type="submit" class="Buton__entrar" id="btn_guardar_usuario">Guardar</button>
+      <button type="button" id="btn__cancelar_usuario" class="Buton__entrar">Cancelar</button>
+    </div>
+  </form>
+</dialog>

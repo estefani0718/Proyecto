@@ -1,21 +1,23 @@
 // modal.js
 import { validarFormulario } from "./validaciones.js";
-import { post ,del} from "./metodos.js";
+import { post ,del,get} from "./metodos.js";
 
 
-export  function abrirModal(idModal,enpoint) {
+export  function abrirModal(idModal,enpoint,extras = {}) {
   const modal = document.querySelector(idModal);
   if (!modal) return console.warn("Modal no encontrado:", idModal);
 
   modal.showModal();
 
     const form = document.querySelector(".form-doc");
-    form.addEventListener("submit",async (e) => {
-        e.preventDefault();
+    form.addEventListener("submit",async (event) => {
+        event.preventDefault();
 
         const btnClickeado = document.activeElement;
         if (btnClickeado.id === "btn_guardar") {
-            const datos =validarFormulario(e.target);
+
+            let datos =validarFormulario(event.currentTarget);           
+             datos = { ...datos, ...extras };
              const res = await post(enpoint, datos);
                 const result = await res.json();
                 console.log(result)
@@ -30,8 +32,7 @@ export  function abrirModal(idModal,enpoint) {
             alert("Actualizando...");
         }
         else if(btnClickeado.id === "btn__cancelar"){  
-          cerrarModal(idModal)
-          alert("cerrando...")
+          cerrarModal(idModal);
         }
     });
   
@@ -44,7 +45,7 @@ export function cerrarModal(idModal) {
 
   modal.close(); 
 }
-export async function cargarModal(ruta, idModal,enpoint) {
+export async function cargarModal(ruta, idModal,enpoint,extras = {}) {
   // 1. Sólo carga e inserta si no existe ya
   if (!document.querySelector(`#${idModal}`)) {
     const res = await fetch(`../MODAL/${ruta}`);
@@ -55,7 +56,7 @@ export async function cargarModal(ruta, idModal,enpoint) {
   }
 
   // 2. Ahora sí abre con tu función
-  abrirModal(`#${idModal}`,enpoint);
+  abrirModal(`#${idModal}`,enpoint,extras);
 }
 
 
@@ -105,5 +106,6 @@ export async function confirmarActualizacion(id, datosActualizados, endpoint) {
     alert("Actualización cancelada por el usuario.");
   }
 }
+
 
 
